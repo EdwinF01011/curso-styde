@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/',function(){
+    return '<h1>ruta</h1>';
+});
+
+Route::get('/usuarios',function(){
+    return '<h1>Mostrando detalle del usuario</h1>'.$_GET['id'];
+});
+
+
+
+
+
+?>
