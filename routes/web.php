@@ -13,20 +13,53 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/',function(){
     return '<h1>ruta</h1>';
 });
 
-Route::get('/usuarios',function(){
-    return '<h1>Mostrando detalle del usuario</h1>'.$_GET['id'];
+
+
+// Route::get('/usuarios',function(){
+//     $text= "<h1>Mostrando detalle del usuario ".$_GET['id']." </h1>";// con php plano
+//     return $text;
+// });
+
+Route::get('/usuarios/{ide}/{name?}',function($ide,$name=null){
+if($name){
+    return 'usuarios';
+    // return "<h1> Mostrando detalle del usuario {$ide} nombre: {$name} </h1> ";
+}else{
+    return "<h1> Mostrando detalle del usuario {$ide} </h1> ";
+}
+// return "<h1> Mostrando detalle del usuario {$ide} nombre: {$name} </h1> ";
+})->where(['name' => '[\d]+' ,'ide'=>'[-\w]+'] );//'ide', '[0-9]+' , 
+
+
+Route::get('/usu',function(){
+    return '<h1>ruta de usu</h1>';
 });
 
+// Route::get('/usuarios/{ide}/{name?}',function($ide,$name=null){
+//     if($name){
+//         return "<h1> Mostrando detalle del usuario {$ide} nombre: {$name} </h1> ";
+//     }else{
+//         return "<h1> Mostrando detalle del usuario {$ide} </h1> ";
+//     }
+//         // return "<h1> Mostrando detalle del usuario {$ide} nombre: {$name} </h1> ";
+//     })->where('ide', '[-\w]+');
+
+Route::get('/usuarios/{slug}',function($slug){
+    return "<h1> Esto es un slug {$slug} </h1> ";
+})->where(['slug' => 'create|delete|update']);
 
 
+Route::get('/usuarios/nuevo',function(){
+    return "<h1> Crear ususario nuevo</h1> ";
+});
 
 
 ?>

@@ -1,5 +1,8 @@
 <?php
 
+
+// die($_SERVER['REQUEST_URI']);//permite ver todo lo que hay después del dominio
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
