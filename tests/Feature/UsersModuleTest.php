@@ -22,7 +22,7 @@ class UsersModuleTest extends TestCase
 
     public function test_load_usu()
     {
-        $response = $this->get('/usu');
+        $response = $this->get('/usuarios');
 
         $response->assertStatus(200);
     }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,12 +55,10 @@ Route::get('/usu',function(){
 
 Route::get('/usuarios/{slug}',function($slug){
     return "<h1> Esto es un slug {$slug} </h1> ";
-})->where(['slug' => 'create|delete|update']);
+})->where(['slug' => 'cre   ate|delete|update']);
 
 
-Route::get('/usuarios/nuevo',function(){
-    return "<h1> Crear ususario nuevo</h1> ";
-});
+Route::get('/usuarios',[UserController::class, 'index']);
 
-
+//[PagesController::UserController, 'index']
 ?>
