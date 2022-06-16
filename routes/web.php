@@ -29,20 +29,21 @@ Route::get('/',function(){
 //     return $text;
 // });
 
-Route::get('/usuarios/{ide}/{name?}',function($ide,$name=null){
-if($name){
-    return 'usuarios';
-    // return "<h1> Mostrando detalle del usuario {$ide} nombre: {$name} </h1> ";
-}else{
-    return "<h1> Mostrando detalle del usuario {$ide} </h1> ";
-}
+Route::get('/usuarios/{ide}/{name?}',[UserController::class, 'añadir']
+// function($ide,$name=null){
+// if($name){
+//     return 'usuarios';
+//     // return "<h1> Mostrando detalle del usuario {$ide} nombre: {$name} </h1> ";
+// }else{
+//     return "<h1> Mostrando detalle del usuario {$ide} </h1> ";
+// }
+
 // return "<h1> Mostrando detalle del usuario {$ide} nombre: {$name} </h1> ";
-})->where(['name' => '[\d]+' ,'ide'=>'[-\w]+'] );//'ide', '[0-9]+' , 
+// }
+)->where(['name' => '[\d]+' ,'ide'=>'[-\w]+'] );//'ide', '[0-9]+' , 
 
 
-Route::get('/usu',function(){
-    return '<h1>ruta de usu</h1>';
-});
+Route::get('/usu',[UserController::class, '_usu']);
 
 // Route::get('/usuarios/{ide}/{name?}',function($ide,$name=null){
 //     if($name){
