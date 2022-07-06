@@ -1,7 +1,7 @@
 # curso-styde
 
 Seguimiento del curso https://styde.net/laravel-5/
-con Laravel Framework 9.12.2
+con Laravel Framework 8.83.18
 PHP 8.0.10 v
 
 
