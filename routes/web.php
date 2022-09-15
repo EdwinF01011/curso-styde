@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmpleadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//genera de manera automática, todas las rutas necesarias, según los métodos la clase
+//php artisan route:list
+Route::resource('empleado', EmpleadoController::class);
+
+
+
+
