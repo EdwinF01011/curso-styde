@@ -82,9 +82,20 @@ class EmpleadoController extends Controller
      * @param  \App\Models\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empleado $empleado)
+    public function update(Request $request, Empleado $id)
     {
         //
+        $datosEmpleado = request()->except(['_token','_method']);//Ignora el token para insertar el resto en la bd
+        // if ($request->hasFile('Foto')) {
+        //     //convierte la foto de .tmp (archivo temporal)  a .png
+        //     $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public');
+        // }
+        Empleado::where('id','=','$id')->update($datosEmpleado);
+
+        $empleado=Empleado::findOrFail($id);
+        // return view('empleado.edit',compact('empleado'));
+        return response()->json($empleado); 
+
     }
 
     /**

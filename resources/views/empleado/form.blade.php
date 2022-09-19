@@ -2,7 +2,7 @@ formulario para los empleados
 
 <br>
     <label for="Nombre">Nombre:</label>
-    <input type="text" name="Nombre" value="{{$empleado->Nombre}}" > 
+     <input type="text" name="Nombre" value="{{$empleado->Nombre}}" > 
     <br>
     <label for="ApellidoPaterno">Apellido Paterno:</label>
     <input type="text" name="ApellidoPaterno" value="{{$empleado->ApellidoPaterno}}" >
@@ -14,7 +14,8 @@ formulario para los empleados
     <input type="text" name="Correo" value="{{$empleado->Correo}}" >
     <br>
     <label for="Foto">Foto:</label>
-    <input type="file" name="Foto" value="{{$empleado->Foto}}">
+    {{$empleado->Foto}}
+    <input type="file" name="Foto" value="">
     <br>
     <label for="Enviar">Enviar:</label>
     <input type="submit" value="Guardar datos">

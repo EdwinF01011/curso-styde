@@ -24,9 +24,9 @@ index de las vistas
             <td>{{ $empleado->ApellidoMaterno }}</td>
             <td>{{ $empleado->Correo }}</td>
             <td>
-                <a href="{{ url('/empleado/'.$empleado->id.'/edit') }}">Editar</a>    
-
-             |
+                <a href="{{ url('/empleado/'.$empleado->id.'/edit') }}">Editar</a>
+                <!-- <a href="{{ url('/empleado/'.$empleado->id.'/edit') }}">New</a>  -->
+                |
                 <form action=" {{ url('/empleado/'.$empleado->id) }}" method="post">
                     @csrf <!-- LLAVE PARA EL CONTROL DE INSERSIONES -->
                     <!--PARA QUE ACEPTE EL BORRADO, LA URL -->
