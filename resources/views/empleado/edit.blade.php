@@ -1,9 +1,9 @@
 para editar los empleados
 
 
-<form action="{{ url('/empleado/'.$empleado->id}}" method="post" enctype="multipart/form-data">
+<form action="{{ url('/empleado/'.$empleado->id) }}" method="post" enctype="multipart/form-data">
     @csrf
-{{ method_field('PATCH') }}
+{{ method_field('PUT') }}
 
 @include('empleado.form');
 </form>

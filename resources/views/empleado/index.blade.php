@@ -4,13 +4,14 @@ index de las vistas
     <thead class="thead-light">
 
         <tr>
-            <th>#</th>
+             <th>#</th>
             <th>Foto</th>
             <th>Nombre</th>
             <th>Apellido Paterno</th>
             <th>Apellido Materno</th>
             <th>Correo</th>
-            <th>Acciones</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
         </tr>
     </thead>
 
@@ -26,8 +27,10 @@ index de las vistas
             <td>
                 <a href="{{ url('/empleado/'.$empleado->id.'/edit') }}">Editar</a>
                 <!-- <a href="{{ url('/empleado/'.$empleado->id.'/edit') }}">New</a>  -->
-                |
-                <form action=" {{ url('/empleado/'.$empleado->id) }}" method="post">
+                |      
+            </td>
+            <td>
+            <form action=" {{ url('/empleado/'.$empleado->id) }}" method="post">
                     @csrf <!-- LLAVE PARA EL CONTROL DE INSERSIONES -->
                     <!--PARA QUE ACEPTE EL BORRADO, LA URL -->
                     {{ method_field('DELETE') }} 

@@ -48,7 +48,7 @@ class EmpleadoController extends Controller
         }
 
         Empleado::insert($datosEmpleado);
-        return response()->json($datosEmpleado);   
+        return response()->json($datosEmpleado);
     }
 
     /**
@@ -72,7 +72,7 @@ class EmpleadoController extends Controller
     {
         //
         $empleado=Empleado::findOrFail($id);
-        return view('empleado.create',compact('empleado'));
+        return view('empleado.edit',compact('empleado'));
     }
 
     /**
@@ -82,19 +82,22 @@ class EmpleadoController extends Controller
      * @param  \App\Models\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empleado $id)
+    public function update(Request $request, $id)
     {
         //
+        // echo $request;
         $datosEmpleado = request()->except(['_token','_method']);//Ignora el token para insertar el resto en la bd
         // if ($request->hasFile('Foto')) {
         //     //convierte la foto de .tmp (archivo temporal)  a .png
         //     $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public');
         // }
         Empleado::where('id','=','$id')->update($datosEmpleado);
-
         $empleado=Empleado::findOrFail($id);
+        // echo $datosEmpleado;
+        
         // return view('empleado.edit',compact('empleado'));
-        return response()->json($empleado); 
+        return response()->json($datosEmpleado);
+        //---------------
 
     }
 

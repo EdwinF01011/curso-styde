@@ -2,7 +2,7 @@ formulario para los empleados
 
 <br>
     <label for="Nombre">Nombre:</label>
-     <input type="text" name="Nombre" value="{{$empleado->Nombre}}" > 
+     <input type="text" name="Nombre" value="{{$empleado->Nombre}}" >
     <br>
     <label for="ApellidoPaterno">Apellido Paterno:</label>
     <input type="text" name="ApellidoPaterno" value="{{$empleado->ApellidoPaterno}}" >
