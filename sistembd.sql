@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-09-2022 a las 03:30:12
+-- Tiempo de generación: 10-10-2022 a las 18:56:13
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -33,7 +33,7 @@ CREATE TABLE `empleados` (
   `ApellidoPaterno` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ApellidoMaterno` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Correo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Foto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -44,18 +44,16 @@ CREATE TABLE `empleados` (
 
 INSERT INTO `empleados` (`id`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `Correo`, `Foto`, `created_at`, `updated_at`) VALUES
 (2, 'thor', 'odin', 'eda', 'loki@thor.com', 'uploads/CiDcbE8sP9GsYAsitYhTAAMFt4aLFE4qRTDTbjNP.png', NULL, NULL),
-(3, 'Oscar', 'Peres', 'zuñiga', 'os@gmail.com', 'uploads/RC4jvZFzW9ZSQtHTlNVeEE01eCYlZvVrj5EZDqjg.png', NULL, NULL),
 (4, 'Oscar', 'Peres', 'zuñiga', 'os@gmail.com', 'uploads/jAfZ0BmdlVnhXuhpcrxcO2K3Cl3vacI3fa2ZUQhc.png', NULL, NULL),
 (5, 'Oscar', 'Peres', 'zuñiga', 'os@gmail.com', 'uploads/HDKe4VW0bInB45pcI5fLKtWaH7kmexCqqt5a6QTv.png', NULL, NULL),
 (7, 'Oscar', 'Peres', 'zuñiga', 'os@gmail.com', 'uploads/nWbeTWnaDBr3ChaxsSr1PysF3EzYjSkag7EQyKo5.png', NULL, NULL),
-(8, 'Oscar', 'Peres', 'zuñiga', 'os@gmail.com', 'C:\\xampp\\tmp\\php1FD9.tmp', NULL, NULL),
 (9, 'dfsdf', 'fsdfsd', 'sdfsd', 'dsfsdf', 'uploads/2GGaC4Cfdb2L0Q3Gthw8C7qmkBjJErOCigdwWNvw.png', NULL, NULL),
 (10, 'jorge', 'Nitales', 'palindro', 'sdf@gamk.com', 'uploads/8ruecVKhNCSEWDmZLc52qgqyU6kb6KFKK8mtaijD.png', NULL, NULL),
-(11, 'jorge', 'Nitales', 'palindro', 'sdf@gamk.com', 'uploads/5jLnrBsfwhlLwX5yQ9ZjU97zVmQV9pOCJWyrQXfR.png', NULL, NULL),
 (12, 'lola', 'vaca', 'maiz', 'sdflk@gmai.com', 'uploads/ze9n1UvHsxFXYVqseByAM94gLbd4XVOn9KiVYhdq.png', NULL, NULL),
-(13, 'lola', 'vaca', 'maiz', 'sdflk@gmai.com', 'uploads/xkdrL8jyHaCJTrVZqGWw8qv3rqxpqWxVGmTOxBSd.png', NULL, NULL),
-(14, 'lola', 'vaca', 'maiz', 'sdflk@gmai.com', 'uploads/neWmDNADteyCLdwnUuGH0JWFU6gCDAL273cPcxLI.png', NULL, NULL),
-(15, 'asd', 'asd', 'asd', 'asd@gas.com', 'uploads/02LvswQjlRZuKiwIQpYbo8lgnGTb3TnevmYKOAsF.png', NULL, NULL);
+(34, 'thor', 'odin', 'edaxcr', 'loki@thor.com', NULL, NULL, NULL),
+(35, 'Calamardo', 'Patricio', 'Esponja', 'cangreBurguer@gmail.com', 'uploads/cHfCzcgL1ik5abS9Z64iVh3RsPezqHC9wzySfeVU.png', NULL, NULL),
+(36, 'asdfasdf', 'asdfadsf', 'adsfasdf', 'adsfadsf', 'uploads/vcIo1XInjaEpz0EQVFBqe68vhhSUG4nJe8Z5JuZf.png', NULL, NULL),
+(37, 'Elon', 'Musk', 'nan', 'elon@spacex.com.co', 'uploads/DM8K5Sc9pI4JoDVI6BPSJfHQyT7xexdwWD5xSveL.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -195,7 +193,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `failed_jobs`

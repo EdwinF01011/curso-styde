@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Empleado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;//   Permite borrar imágenes
+
 
 class EmpleadoController extends Controller
 {
@@ -15,7 +17,7 @@ class EmpleadoController extends Controller
     public function index()
     {
         //
-        $datos['empleados']=Empleado::paginate(15);
+        $datos['empleados']=Empleado::paginate(30);
         return view('empleado.index',$datos);
     }
 
@@ -82,15 +84,18 @@ class EmpleadoController extends Controller
      * @param  \App\Models\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         //
         // echo $request;
         $datosEmpleado = request()->except(['_token','_method']);//Ignora el token para insertar el resto en la bd
-        // if ($request->hasFile('Foto')) {
-        //     //convierte la foto de .tmp (archivo temporal)  a .png
-        //     $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public');
-        // }
+        if ($request->hasFile('Foto')) {
+            $empleado=Empleado::findOrFail($id);
+            Storage::delete('public/'.$empleado->foto);
+            //convierte la foto de .tmp (archivo temporal)  a .png
+            $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public');
+        }
         Empleado::where('id','=','$id')->update($datosEmpleado);
         $empleado=Empleado::findOrFail($id);
         // echo $datosEmpleado;
